@@ -1,0 +1,12 @@
+# https://numtide.github.io/devshell
+[devshell]
+packages = [
+  "nodejs",
+  "nodePackages.typescript"
+]
+
+[[commands]]
+help = "serves homework 1"
+name = "dev1"
+package = "miniserve"
+command = "miniserve ./hw1-travel"

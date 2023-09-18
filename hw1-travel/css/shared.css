@@ -1,0 +1,37 @@
+/* Holds common styles that are shared between all pages. */
+
+/*
+  Color scheme was generated with https://coolors.co/
+*/
+
+/********** Elements **********/
+body {
+  background-color: black;
+}
+
+a {
+
+}
+
+/********** Classes ***********/
+.primary-text {
+
+}
+
+.secondary-text {
+
+}
+
+.highlight1 {
+
+}
+
+.highlight2 {
+
+}
+
+.border {}
+
+
+/*********** IDs **********/
+
