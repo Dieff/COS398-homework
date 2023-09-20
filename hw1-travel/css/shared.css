@@ -2,36 +2,77 @@
 
 /*
   Color scheme was generated with https://coolors.co/
+  https://coolors.co/606c38-283618-fefae0-dda15e-bc6c25
 */
 
 /********** Elements **********/
 body {
-  background-color: black;
+  background-color: #dda15e;
+  color: rgb(34, 34, 34);
+  margin: 0px;
+  /* Body should be at least the height of the screen. Else the footer looks silly. */
+  min-height: 100vh;
+}
+
+main {
+  margin: 1rem 10rem;
+  padding: 1rem;
+  background-color: #fefae0;
+}
+
+footer {
+  width: 100%;
+  background-color: #bc6c25;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* Ensure footer is always at the bottom of the body, with no visible gaps */
+  position: relative;
+  bottom: 0px;
 }
 
 a {
+  color: #606c38;
+}
 
+a :visited {
+  color: #283618;
 }
 
 /********** Classes ***********/
 .primary-text {
-
 }
 
 .secondary-text {
-
 }
 
 .highlight1 {
-
 }
 
 .highlight2 {
-
 }
 
-.border {}
-
+.border {
+}
 
 /*********** IDs **********/
+/* Page links on index */
+#index-main-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 2rem;
+}
 
+#index-main-links a {
+  padding: 2rem;
+  margin: 2rem;
+  font-size: 200%;
+  border: 2px solid #bc6c25;
+  border-radius: 1rem;
+}
+
+#index-main-links a:hover {
+  background-color: rgba(0, 0, 0, 0.164);
+}
