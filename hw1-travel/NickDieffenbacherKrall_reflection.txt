@@ -1,0 +1,24 @@
+Homework 1 Reflection
+
+Going in to COS398, I already had some experience with web development.
+In particular, I spent last summer working on an internal corporate web application
+during my internship at Garmin. My summer project was very successful
+(I got a return offer!), and had given me a decent background in HTML and Javascript.
+However, this class is probably the first time I have ever sat down and designed a vanilla
+website with HTML and CSS from scratch.
+
+In previous projects, I have always used some sort of high level Javascript or CSS framework,
+such as ReactJS or Bootstrap. Packages included with these frameworks usually
+solved the basic CSS layout issues for me. For this assignment, I had
+to make the layouts, columns, and grids on my own. I had quite a hard time with certain elements,
+such as the title page, until I began adopting CSS Flexbox. I find Flexbox much more intuitive
+than using `float`, and I hope to keep using it for my other projects. I also want to check
+out CSS grid.
+
+The hardest single part of the website was the "Landmarks" page. In particular, creating the grid
+of landmark cards was a challenge because of the multiple, nested, horizontal layouts.
+The interaction of <img> tags with CSS flexbox is also confusing, and ultimately I resorted
+to setting absolute sized for my images. I don't think this page would look very good on mobile.
+Creating the card layout gave me many ideas for how to approach future projects in a simpler way.
+
+The URL for my site is: https://dieff.github.io/COS398-homework/hw1-travel/
