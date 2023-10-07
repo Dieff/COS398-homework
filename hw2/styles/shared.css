@@ -1,0 +1,152 @@
+/*
+  ***** Palette  *****
+
+  From https://colorhunt.co/palette/070a52d21312ed2b2af15a59
+
+  Background: #1c1818
+  Accent backgroun: #1c1818
+  highlight 1: #D21312
+  highlight 2: #ED2B2A
+  hightlight 3: #F15A59
+  text: #dbdbdb
+*/
+
+/***** Tags *****/
+
+body {
+  /* Sensible defaults */
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+  overflow-x: none;
+
+  /* bg */
+  background: #0e0e2b;
+
+  /* Text */
+  /* Font is taken from Google Fonts */
+  font-family: "Roboto", sans-serif;
+  color: #dbdbdb;
+}
+
+header {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  background: #040631;
+}
+
+header h1 {
+  color: #d21312;
+  padding: 0.5rem;
+  font-family: "Black Ops One", cursive;
+  padding: 1rem;
+  margin: 0rem;
+  padding-left: 1rem;
+  font-size: 230%;
+}
+
+header a {
+  color: #ed2b2a;
+  width: 4rem;
+  font-size: 120%;
+}
+
+header a:hover {
+  font-weight: bolder;
+}
+
+footer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: #040631;
+}
+
+figure {
+  background: #070a52;
+  min-height: 20rem;
+}
+
+figure img {
+  width: 100%;
+}
+
+figure figcaption {
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+/***** Classes *****/
+
+.hideme {
+  display: none;
+}
+
+.narrow-content {
+  width: 70%;
+  margin: auto;
+  background: #040631;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.big-figure {
+  width: 60%;
+  margin: auto;
+}
+
+.header-div-big {
+  width: 1px;
+  height: 3rem;
+  border-right: 0.3rem solid #f15a59;
+}
+
+.header-div-small {
+  width: 1px;
+  height: 2rem;
+  border-right: 0.1rem solid #f15a59;
+}
+
+/*
+ Styles for the collapsible sections
+*/
+.collapsible {
+  border: 0.1rem solid #f15a59;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.collapsible div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 0.1rem solid #F15A59;
+}
+
+.collapsible button {
+  margin: 0.2rem;
+  font-size: 100%;
+
+  color: #dbdbdb;
+  background-color: #040631;
+
+  border: 0.2rem solid #F15A59;
+  border-radius: 0.4rem;
+}
+
+.collapsible button:hover {
+  background-color: #080d61;
+}
+
+.collapsible button:focus {
+  background-color: #080d61;
+}
+
+
+
+/***** IDs *****/
