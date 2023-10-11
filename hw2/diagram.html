@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta name="author" content="Nick Dieff" />
+    <title>Chongqing Transit Map</title>
+
+    <!-- Load our resources -->
+    <link rel="stylesheet" href="./styles/shared.css" />
+    <script src="./scripts/shared.js"></script>
+    <script src="./scripts/diagram.js"></script>
+
+    <!-- Load fonts from Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Transit Map</h1>
+      <div class="header-div-big"></div>
+      <a href="./index.html"> Home </a>
+      <div class="header-div-small"></div>
+      <a href="./references.html"> References </a>
+    </header>
+    <main id="diagram-page-main">
+      <article class="gen-article">
+        <h3>Chongqing Rail Transit Map</h3>
+        <p>
+          Use your mouse (click and drag) to explore this route map of the
+          Chonqing rail network. Zoom in our out using the buttons.
+          Red circles can be clicked to learn more about a particular area.
+        </p>
+      </article>
+      <section id="diagram-root">
+        <!-- The zoomeable-panneable part of the map -->
+        <div id="diagram-zoom">
+          <img
+            id="diagram-bg"
+            src="./images/transit-map.png"
+            alt="Chinqing rail transit map"
+          />
+          <div class="diagram-poi"></div>
+        </div>
+        <!-- Zoom controls -->
+        <div id="diagram-controls">
+          <button id="diagram-zoom-in">+</button>
+          <button id="diagram-zoom-out">-</button>
+        </div>
+        <!-- Map information dialog -->
+        <aside id="diagram-poi-info" class="hideme">
+          <button id="diagram-poi-info-close" title="close">X</button>
+          <div id="diagram-poi-image-holder">
+            <img id="diagram-poi-image" alt="PLACEHOLDER" />
+          </div>
+          <article>
+            <h2 id="diagram-poi-title">PLACEHOLDER</h2>
+            <p id="diagram-poi-content">PLACEHOLDER CONTENT</p>
+          </article>
+        </aside>
+      </section>
+    </main>
+    <footer>
+      <div>By Nick Dieffenbacher-Krall for COS398, fall 2023</div>
+      <div>
+        <a href="mailto:test@gmail.com"> Feedback? </a>
+      </div>
+    </footer>
+  </body>
+</html>

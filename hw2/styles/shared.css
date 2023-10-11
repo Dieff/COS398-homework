@@ -1,14 +1,14 @@
 /*
   ***** Palette  *****
 
-  From https://colorhunt.co/palette/070a52d21312ed2b2af15a59
+  Created with Coolors based on the index header image
 
-  Background: #1c1818
-  Accent backgroun: #1c1818
+  Background: #eeedec
+  Accent background: ##B5ACA1
   highlight 1: #D21312
   highlight 2: #ED2B2A
   hightlight 3: #F15A59
-  text: #dbdbdb
+  text: #B5ACA1
 */
 
 /***** Tags *****/
@@ -19,14 +19,34 @@ body {
   padding: 0px;
   min-height: 100vh;
   overflow-x: none;
+  font-size: 12px;
 
   /* bg */
-  background: #0e0e2b;
+  background: #eeedec;
 
   /* Text */
   /* Font is taken from Google Fonts */
   font-family: "Roboto", sans-serif;
-  color: #dbdbdb;
+  color: #656260;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+header a {
+  font-size: 200%;
 }
 
 header {
@@ -35,23 +55,22 @@ header {
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-  background: #040631;
+  background: #b5aca1;
+  color: #2f47df;
 }
 
 header h1 {
-  color: #d21312;
   padding: 0.5rem;
   font-family: "Black Ops One", cursive;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0rem;
   padding-left: 1rem;
-  font-size: 230%;
+  font-size: 300%;
 }
 
 header a {
-  color: #ed2b2a;
-  width: 4rem;
-  font-size: 120%;
+  width: 3em;
+  font-size: 200%;
 }
 
 header a:hover {
@@ -63,11 +82,12 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background: #040631;
+  background: #b5aca1;
+  font-size: 24px;
 }
 
 figure {
-  background: #070a52;
+  background: #656260;
   min-height: 20rem;
 }
 
@@ -78,20 +98,26 @@ figure img {
 figure figcaption {
   padding: 1rem;
   margin-bottom: 2rem;
+  color: #EEEDEC;
+  font-size: 110%;
+}
+
+p {
+  font-size: 150%;
 }
 
 /***** Classes *****/
 
 .hideme {
-  display: none;
+  display: none !important;
 }
 
 .narrow-content {
   width: 70%;
   margin: auto;
-  background: #040631;
   padding: 1rem;
   margin-bottom: 1rem;
+  font-size: 200%;
 }
 
 .big-figure {
@@ -102,20 +128,20 @@ figure figcaption {
 .header-div-big {
   width: 1px;
   height: 3rem;
-  border-right: 0.3rem solid #f15a59;
+  border-right: 0.3rem solid #656260;
 }
 
 .header-div-small {
   width: 1px;
   height: 2rem;
-  border-right: 0.1rem solid #f15a59;
+  border-right: 0.1rem solid #656260;
 }
 
 /*
  Styles for the collapsible sections
 */
 .collapsible {
-  border: 0.1rem solid #f15a59;
+  border: 0.1rem solid #656260;
   padding: 1rem;
   border-radius: 1rem;
   margin-bottom: 1rem;
@@ -125,28 +151,154 @@ figure figcaption {
   display: flex;
   align-items: center;
   gap: 1rem;
-  border-bottom: 0.1rem solid #F15A59;
+  border-bottom: 0.1rem solid #656260;
 }
 
 .collapsible button {
   margin: 0.2rem;
   font-size: 100%;
 
-  color: #dbdbdb;
-  background-color: #040631;
+  color: #1b1616;
+  background-color: #9e9e9e;
 
-  border: 0.2rem solid #F15A59;
+  border: 0.2rem solid #656260;
   border-radius: 0.4rem;
 }
 
 .collapsible button:hover {
-  background-color: #080d61;
+  background-color: #777777;
 }
 
 .collapsible button:focus {
-  background-color: #080d61;
+  background-color: #7c7c7c;
 }
 
+.gen-article {
+  padding: 0rem 4rem;
+}
 
+.gen-article a {
+  font-size: 200%;
+}
+
+.split-article {
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+}
+
+.split-article aside {
+  width: 50%;
+  height: auto;
+}
+
+.split-article p {
+  padding: 2rem;
+  width: 50%;
+}
+
+.diagram-poi {
+  position: absolute;
+  background: rgba(255, 0, 0, 0.5);
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+
+.diagram-poi:hover {
+  border: 6px solid blue;
+}
 
 /***** IDs *****/
+
+/* Stuff on the index */
+/*
+Inspiration for the article on top of the header image from
+https://stackoverflow.com/questions/21055105/how-to-position-image-caption-over-and-within-a-responsive-image
+*/
+#index-intro {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+
+#index-intro img {
+  width: 100%;
+  height: auto;
+}
+
+#index-intro article {
+  position: absolute;
+  width: 50%;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  color: rgb(242, 242, 242);
+  background-color: #656565b7;
+}
+
+/* Station map / diagram */
+#diagram-page-main {
+  display: flex;
+  flex-direction: column;
+}
+
+#diagram-root {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  max-height: 80vh;
+}
+
+/* From https://cssdeck.com/blog/zoom-images-inside-the-container-on-mouse-over-using-css/ */
+#diagram-zoom {
+  position: relative;
+  transform-origin: 0 0;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+#diagram-controls {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#diagram-poi-info {
+  position: fixed;
+  top: 10vh;
+  left: 5vw;
+  width: 85vw;
+  background-color: #EEEDEC;
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  border: 5px solid #898A8B;
+  border-radius: 1em;
+}
+
+#diagram-poi-image-holder {
+  flex: 1;
+  align-self: center;
+}
+
+#diagram-poi-image {
+  width: 100%;
+  height: auto;
+}
+
+#diagram-poi-info article {
+  flex: 1;
+}
+
+#diagram-poi-info button {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  padding: 5px;
+}

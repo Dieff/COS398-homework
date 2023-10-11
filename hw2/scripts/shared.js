@@ -2,7 +2,9 @@
   Create collapsible sections effect.
 
   The effect will automatically be applied to any article with
-  the "collapsible" class and the correct children present
+  the "collapsible" class and the correct children present.
+
+  MDN was used extensively to create this script.
 */
 document.addEventListener("DOMContentLoaded", () => {
   // find each article with .collapsible, and attempts to add event listeners
