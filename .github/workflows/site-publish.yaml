@@ -1,0 +1,37 @@
+name: "Site publisher"
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: "Code checkout"
+        uses: actions/checkout@v4
+
+      # TODO: find a way to build sass that can use wildcards
+      - name: "Build SASS"
+        uses: gha-utilities/sass-build@v0.5.1
+        with:
+          source: "hw3/styles/styles.scss"
+          destination: "hw3/styles/styles.css"
+
+      - name: "Setup Pages"
+        uses: actions/configure-pages@v3
+
+      - name: "Upload artifact"
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
+        
+      - name: "Deploy to GitHub Pages"
+        id: deployment
+        uses: actions/deploy-pages@v2
