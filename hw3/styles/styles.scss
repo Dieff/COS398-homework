@@ -1,9 +1,80 @@
-body {
-  background-color: black;
+// variables
+// color scheme from Catpuccin
+$base-color: #1e1e2e;
+$primary-color: #89b4fa;
+$secondary-color: #f5c2e7;
+$extra-color1: #f38ba8;
+$extra-color2: #a6e3a1;
+$border-color: #f9e2af;
+$link-color: #94e2d5;
+
+$base-font-size: 20px;
+$base-font: Raleway, sans-serif;
+$title-font: "Arial";
+
+
+$pgPaddingSmall: 1rem;
+
+// Reusable segments
+@mixin banish-margin {
+  margin: 0px;
+  padding: 0px;
 }
+
+@mixin flexbox-even {
+  display: flex;
+  justify-content: space-around;
+}
+
+// Tags
+
+body {
+  @include banish-margin;
+
+  
+
+  background-color: $base-color;
+  font-size: $base-font-size;
+  font-family: $base-font;
+  color: $primary-color;
+}
+
+footer {
+  @include banish-margin;
+  @include flexbox-even;
+
+  flex-direction: row;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-style: $title-font;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Responsive Header
 
 .desktop-dev {
   h1 {
     color: blue
   }
+}
+
+// Classes
+
+.title-animate-left {
+  font-size: 200%;
+  color: $extra-color1;
+}
+
+.title-animate-right {
+  font-size: 180%;
+  color: $extra-color2;
 }
