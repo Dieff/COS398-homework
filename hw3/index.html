@@ -27,7 +27,7 @@
     <!-- Laptop version: header floats next on upper right -->
     <!-- Mobile version: header floats in the middle -->
     <nav class="desktop-nav">
-      <h1>Contents</h1>
+      <h1>Resume Contents</h1>
       <ul>
         <li><a href="#top">Top</a></li>
         <li><a href="#header-work">Work Experience</a></li>
@@ -45,7 +45,10 @@
       </ul>
     </nav>
     <nav class="mobile-nav">
-      <a href="#top">Back to top</a>
+      <!-- Need to use a div here so we can use both media queries and js to influence element visibility -->
+      <div class="mobile-nav-inner">
+        <a href="#top">Back to top</a>
+      </div>
     </nav>
     <section id="body-inner">
       <!-- Animated Header -->
@@ -57,15 +60,125 @@
       <main>
         <!-- Work Experience -->
         <article>
-          <h3 id="header-work">Selected Work Experience</h3>
-          <section>Garmin</section>
-          <section>Digital and Spatial History Lab</section>
-          <section>L.L. Bean</section>
-          <section>BioMedia Lab</section>
+          <h3 id="header-work" class="indexed-header">
+            Selected Work Experience
+          </h3>
+          <section class="experience-item">
+            <div class="item-title">
+              <h4>Garmin</h4>
+              <aside>Summer 2023</aside>
+            </div>
+            <p class="item-caption">
+              Internship in Site Reliability Engineering - Yarmouth, ME
+            </p>
+            <ul class="item-list">
+              <li>
+                Created an internal testing tool to generate binary messages for
+                prototype satellite communication devices, which was used by
+                dozens of engineers across the company.
+              </li>
+              <li>
+                Developed a responsive web application using .NET Blazor to
+                serve as a dashboard for a testing tools. The application was
+                deployed to an Azure App Service using Octopus CD and TeamCity
+                CI.
+              </li>
+              <li>
+                Conducted security assessments of existing .NET libraries using
+                structured fuzzing techniques.
+              </li>
+              <li>
+                Improvemed existing continuous integration and deployment
+                pipelines to improve the workflow for deploying Terraform-based
+                Infrastructure-as-Code.
+              </li>
+            </ul>
+          </section>
+          <section class="experience-item">
+            <div class="item-title">
+              <h4>Digital and Spatial History Lab, University of Maine</h4>
+              <aside>2022 - 2023</aside>
+            </div>
+            <p class="item-caption">Student Research Assistant - Orono, ME</p>
+            <ul class="item-list">
+              <li>
+                Advised historians on the correct scheme for a database of
+                historical locations and events.
+              </li>
+              <li>
+                Analyzed structured historical data using Python, Pandas, and
+                Jupyter Notebooks. The analysis was later developed into an
+                error checking procedure for future data entry work.
+              </li>
+              <li>Analyzed unstructured data using sentiment analysis.</li>
+            </ul>
+          </section>
+          <section class="experience-item">
+            <div class="item-title">
+              <h4>L.L. Bean</h4>
+              <aside>2018 - 2019</aside>
+            </div>
+            <p class="item-caption">
+              Internship in Cybersecurity and DevOps - Freeport, ME
+            </p>
+            <ul class="item-list">
+              <li>
+                Supported an Agile team of web developers by improving
+                continuous integration and deployment pipelines, using Jenkins,
+                Git, and Docker.
+              </li>
+              <li>
+                Created Python services to automate various security and
+                administration tasks in Kubernetes clusters and Google Cloud
+                Platform.
+              </li>
+              <li>
+                Researched emerging technologies, including new Service Mesh and
+                CI solutions, and created presentation on them for senior
+                leaders.
+              </li>
+              <li>
+                Wrote learning materials for new team members, including guides
+                on the deployment of microservices, and the creation of
+                re-usabled Python and JavaScript libraries for internal use.
+              </li>
+            </ul>
+          </section>
+          <section class="experience-item">
+            <div class="item-title">
+              <h4>BioMediaLab, University of Maine</h4>
+              <aside>2013-2015 (summers), 2016-2019</aside>
+            </div>
+            <p class="item-caption">Student Web Developer - Orono, ME</p>
+            <ul class="item-list">
+              <li>
+                Developed new features for a learning management system used by
+                thousands of University of Maine students and instructors.
+              </li>
+              <li>
+                Integrated existing 3rd-party services, including OAuth 2.0
+                based web APIs, with University of Maine systems.
+              </li>
+              <li>
+                Refactored a legacy PHP web application to a micro-service
+                architecture, using Typescript, React, and GraphQL.
+              </li>
+              <li>
+                Improved the deployment process for the lab's core web
+                applications by introdicing Kubernetes, Docker-based developer
+                containers, and continuous integration.
+              </li>
+              <li>
+                Assessed the security of web services, identified and repaired
+                existing security issues, and implemented improved testing
+                infrastructure to enhance security going forward.
+              </li>
+            </ul>
+          </section>
         </article>
         <!-- Other Experience -->
         <article>
-          <h3 id="header-volunteer">
+          <h3 id="header-volunteer" class="indexed-header">
             Selected Volunteer / Extra-Curricular Experience
           </h3>
           <section>University of Maine Cybersecurity Team</section>
@@ -73,9 +186,108 @@
         </article>
         <!-- Skills -->
         <article>
-          <h3 id="header-skills">Technical Skills</h3>
-          <section>
-            <h5>Programming Langauges</h5>
+          <h3 id="header-skills" class="indexed-header">Technical Skills</h3>
+          <h4>Programming Languages</h4>
+          <section class="skill-block-list">
+            <section class="skill-block-root">
+              <img
+                src="./images/js-logo.svg"
+                alt="JavaScript Logo"
+                class="skill-block-logo"
+              />
+              <div>
+                <h5>JavaScript</h5>
+                <ul>
+                  <li>
+                    Front end developement with JavaScript, CSS/SASS, and
+                    ReactJS.
+                  </li>
+                  <li>
+                    Server-side JavaScript and Typescript using NodeJS, Express,
+                    and GraphQL.
+                  </li>
+                  <li>
+                    Consuming and publishing NPM libraries with Jest-based
+                    testing and CI/CD integration.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="skill-block-root">
+              <img
+                src="./images/python-logo.svg"
+                alt="Python Logo"
+                class="skill-block-logo"
+              />
+              <div>
+                <h5>Python</h5>
+                <ul>
+                  <li>
+                    Front end developement with JavaScript, CSS/SASS, and
+                    ReactJS.
+                  </li>
+                  <li>
+                    Server-side JavaScript and Typescript using NodeJS, Express,
+                    and GraphQL.
+                  </li>
+                  <li>
+                    Consuming and publishing NPM libraries with Jest-based
+                    testing and CI/CD integration.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="skill-block-root">
+              <img
+                src="./images/dotnet-logo.svg"
+                alt=".NET Logo"
+                class="skill-block-logo"
+              />
+              <div>
+                <h5>C# / .NET</h5>
+                <ul>
+                  <li>
+                    Front end developement with JavaScript, CSS/SASS, and
+                    ReactJS.
+                  </li>
+                  <li>
+                    Server-side JavaScript and Typescript using NodeJS, Express,
+                    and GraphQL.
+                  </li>
+                  <li>
+                    Consuming and publishing NPM libraries with Jest-based
+                    testing and CI/CD integration.
+                  </li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="skill-block-root">
+              <img
+                src="./images/rust-logo.svg"
+                alt="Rust Logo"
+                class="skill-block-logo"
+              />
+              <div>
+                <h5>Rust</h5>
+                <ul>
+                  <li>
+                    Front end developement with JavaScript, CSS/SASS, and
+                    ReactJS.
+                  </li>
+                  <li>
+                    Server-side JavaScript and Typescript using NodeJS, Express,
+                    and GraphQL.
+                  </li>
+                  <li>
+                    Consuming and publishing NPM libraries with Jest-based
+                    testing and CI/CD integration.
+                  </li>
+                </ul>
+              </div>
+            </section>
           </section>
           <section><h5>Operating Systems</h5></section>
           <section><h5>Cloud Computing</h5></section>

@@ -15,12 +15,14 @@ $link-color: #94e2d5;
 $base-font-size: 20px;
 $base-font: Raleway, sans-serif;
 $title-font: "Arial";
+$content-font-size: 16px;
 
 // sizing
 $breakpoint-laptop: 880px;
 $breakpoint-desktop: 1300px;
 $pgPaddingSmall: 1rem;
 $pgPaddingMedium: 3rem;
+$logo-size: 10em;
 
 // Reusable segments
 @mixin banish-margin {
@@ -47,6 +49,7 @@ header {
 
   h1 {
     color: $extra-color2;
+    font-size: 120%;
   }
 
   p {
@@ -69,6 +72,7 @@ body {
 main {
   width: 90%;
   margin: auto;
+  margin-top: $pgPaddingMedium;
   background: $base-color;
 }
 
@@ -113,6 +117,20 @@ a {
   }
 }
 
+article {
+  font-size: $content-font-size;
+  padding: $pgPaddingSmall;
+
+  h3, h4 {
+    font-size: 130%;
+  }
+
+  ul {
+    width: 90%;
+    margin: auto;
+  }
+}
+
 // Responsive Header
 
 nav {
@@ -120,13 +138,14 @@ nav {
 }
 
 // Base (mobile)
-.mobile-nav {
+.mobile-nav-inner {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   min-height: 3rem;
   border-bottom: 0.2rem solid $border-color;
+  background: $base-color;
 
   // display gets changed back to flex by the mobile-menu.js script
   display: none;
@@ -145,6 +164,11 @@ nav {
 
 // Laptop
 @media (min-width: $breakpoint-laptop) {
+  // the header looks better with this font size,
+  // but it is too big for mobile.
+  header > h1 {
+    font-size: 180%;
+  }
   .mobile-nav {
     display: none;
   }
@@ -165,7 +189,7 @@ nav {
     // menu position
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
 
     // menu text props
     opacity: 0.4;
@@ -238,6 +262,65 @@ nav {
   to {
     margin-right: 0px;
   }
+}
+
+.indexed-header {
+  width: 95%;
+  margin: auto;
+  padding: $pgPaddingSmall;
+  margin-bottom: $pgPaddingSmall;
+
+  font-size: 180%;
+  border-bottom: 0.1rem solid $border-color;
+}
+
+.experience-item {
+  padding-bottom: $pgPaddingMedium;
+}
+
+.item-title {
+  @include banish-margin();
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  aside {
+    padding: 0px 4rem;
+    color: $extra-color1;
+  }
+}
+
+.item-caption {
+  margin-left: 3%;
+  font-style: italic;
+}
+
+.item-list {
+  li {
+    padding: 0.2em 0px;
+  }
+}
+
+.skill-block-list {
+  display: flex;
+}
+
+.skill-block-root {
+  border: 0.1rem solid $border-color;
+  border-radius: 0.2rem;
+  display: flex;
+  gap: 1rem;
+
+  h5 {
+    font-size: 120%;
+    color: $extra-color2;
+  }
+}
+
+.skill-block-logo {
+  width: $logo-size;
+  height: $logo-size;
 }
 
 ////////////////////////// IDs ///////////////////////////
