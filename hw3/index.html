@@ -9,47 +9,88 @@
     <!-- Load 1st party resources -->
     <!-- The SCSS compiler should place CSS files alongside the scss versions -->
     <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="./scripts/mobile-menu.js"></script>
+    <script>
+      const a = 1;
+    </script>
+
+    <!-- Load 3rd party resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
       rel="stylesheet"
     />
-    <!-- Load 3rd party resources -->
   </head>
   <body>
-    <!-- Animated Header -->
-    <header>
-      <h1 class="title-animate-left">Nick Dieffenbacher-Krall</h1>
-      <h2 class="title-animate-right">Contact Info</h2>
-      <h2 class="title-animate-right">Summary</h2>
-      <p>
-        Hiugh level summasdfas jkadsjkasdj;fds adskjkajdfs; asdfasdjladfs
-        adsadsf;jadfsjkafdsjjafdsj
-      </p>
-    </header>
     <!-- Desktop version: header is a left column -->
     <!-- Laptop version: header floats next on upper right -->
     <!-- Mobile version: header floats in the middle -->
-    <nav class="desktop-dev">
-      <h1>Nick Dieffenbacher-Krall</h1>
+    <nav class="desktop-nav">
+      <h1>Contents</h1>
+      <ul>
+        <li><a href="#top">Top</a></li>
+        <li><a href="#header-work">Work Experience</a></li>
+        <li><a href="#header-volunteer">Volunteer Experience</a></li>
+        <li><a href="#header-skills">Technical Skills</a></li>
+      </ul>
     </nav>
-    <nav class="laptop-nav"></nav>
-    <nav class="mobile-nav"></nav>
-    <main>
-      <!-- Intro section -->
-      <section></section>
-      <!-- Work Experience -->
-      <!-- Other Experience -->
-      <!-- Skills -->
-    </main>
-    <footer>
-      <p>Created by Nick Dieffenbacher-Krall for COS 398 at UMaine</p>
-      <p>
-        Page best viewed with
-        <a href="https://www.mozilla.org/en-US/firefox/new/">Mozilla Firefox</a>
-        🙂.
-      </p>
-    </footer>
+    <nav class="laptop-nav">
+      <h1>Contents</h1>
+      <ul>
+        <li><a href="#top">Top</a></li>
+        <li><a href="#header-work">Work Experience</a></li>
+        <li><a href="#header-volunteer">Volunteer Experience</a></li>
+        <li><a href="#header-skills">Technical Skills</a></li>
+      </ul>
+    </nav>
+    <nav class="mobile-nav">
+      <a href="#top">Back to top</a>
+    </nav>
+    <section id="body-inner">
+      <!-- Animated Header -->
+      <header>
+        <h1 class="title-animate-left">Nick Dieffenbacher-Krall</h1>
+        <p class="title-animate-right">Contact Info</p>
+        <p class="title-animate-right">Summary</p>
+      </header>
+      <main>
+        <!-- Work Experience -->
+        <article>
+          <h3 id="header-work">Selected Work Experience</h3>
+          <section>Garmin</section>
+          <section>Digital and Spatial History Lab</section>
+          <section>L.L. Bean</section>
+          <section>BioMedia Lab</section>
+        </article>
+        <!-- Other Experience -->
+        <article>
+          <h3 id="header-volunteer">
+            Selected Volunteer / Extra-Curricular Experience
+          </h3>
+          <section>University of Maine Cybersecurity Team</section>
+          <section>Academic Competitions</section>
+        </article>
+        <!-- Skills -->
+        <article>
+          <h3 id="header-skills">Technical Skills</h3>
+          <section>
+            <h5>Programming Langauges</h5>
+          </section>
+          <section><h5>Operating Systems</h5></section>
+          <section><h5>Cloud Computing</h5></section>
+        </article>
+      </main>
+      <footer>
+        <p>Created by Nick Dieffenbacher-Krall for COS 398 at UMaine</p>
+        <p>
+          Page best viewed with
+          <a href="https://www.mozilla.org/en-US/firefox/new/"
+            >Mozilla Firefox</a
+          >
+          🙂.
+        </p>
+      </footer>
+    </section>
   </body>
 </html>

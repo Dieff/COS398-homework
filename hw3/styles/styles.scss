@@ -1,19 +1,26 @@
-// variables
+///////////////////// VARIABLES /////////////////////////////
 // color scheme from Catpuccin
 $base-color: #1e1e2e;
+$light-base-color: #313244;
+$background: #11111b;
 $primary-color: #89b4fa;
 $secondary-color: #f5c2e7;
 $extra-color1: #f38ba8;
 $extra-color2: #a6e3a1;
+$extra-color3: #cba6f7;
 $border-color: #f9e2af;
 $link-color: #94e2d5;
 
+// fonts
 $base-font-size: 20px;
 $base-font: Raleway, sans-serif;
 $title-font: "Arial";
 
-
+// sizing
+$breakpoint-laptop: 880px;
+$breakpoint-desktop: 1300px;
 $pgPaddingSmall: 1rem;
+$pgPaddingMedium: 3rem;
 
 // Reusable segments
 @mixin banish-margin {
@@ -26,28 +33,75 @@ $pgPaddingSmall: 1rem;
   justify-content: space-around;
 }
 
-// Tags
+////////////////////////////////// TAGS ////////////////////////////////////////
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $light-base-color;
+  width: 100%;
+  min-height: 20rem;
+  font-size: 150%;
+
+  h1 {
+    color: $extra-color2;
+  }
+
+  p {
+    color: $extra-color3;
+  }
+}
 
 body {
   @include banish-margin;
 
-  
-
-  background-color: $base-color;
+  background-color: $background;
   font-size: $base-font-size;
   font-family: $base-font;
   color: $primary-color;
+
+  width: 100vw;
+  overflow-x: hidden;
 }
 
+main {
+  width: 90%;
+  margin: auto;
+  background: $base-color;
+}
+
+// the mobile footer needs items stacked
 footer {
   @include banish-margin;
   @include flexbox-even;
 
-  flex-direction: row;
+  flex-direction: column;
+  
+  p {
+    padding: 0px 1rem;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
+@media (min-width: $breakpoint-laptop) {
+  footer {
+    @include banish-margin;
+    @include flexbox-even;
+
+    flex-direction: row;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-style: $title-font;
+  color: $secondary-color;
+  margin: 0.8em;
 }
 
 a {
@@ -61,20 +115,132 @@ a {
 
 // Responsive Header
 
-.desktop-dev {
-  h1 {
-    color: blue
+nav {
+  background: $base-color;
+}
+
+// Base (mobile)
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 3rem;
+  border-bottom: 0.2rem solid $border-color;
+
+  // display gets changed back to flex by the mobile-menu.js script
+  display: none;
+  justify-items: center;
+  
+  a {
+    margin: auto;
+  }
+}
+.laptop-nav {
+  display: none;
+}
+.desktop-nav {
+  display: none;
+}
+
+// Laptop
+@media (min-width: $breakpoint-laptop) {
+  .mobile-nav {
+    display: none;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .laptop-nav {
+    display: inherit;
+
+    // menu sizing
+    min-width: 10rem;
+    min-height: 10rem;
+    padding: $pgPaddingSmall;
+    margin: $pgPaddingSmall;
+    border: 0.2rem solid $border-color;
+    border-radius: 0.2rem;
+
+    // menu position
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    // menu text props
+    opacity: 0.4;
+    &:hover {
+      opacity: 1;
+    }
+    ul {
+      list-style-type: none;
+    }
+    li {
+      padding: 0.5em 0;
+    }
   }
 }
 
-// Classes
+// Desktop
+@media (min-width: $breakpoint-desktop) {
+  .mobile-nav {
+    display: none;
+  }
+  .laptop-nav {
+    display: none;
+  }
+  .desktop-nav {
+    display: inherit;
+    min-width: 15rem;
+
+    padding: $pgPaddingSmall;
+    display: flex;
+    flex-direction: column;
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      padding: 0.8rem 0px;
+    }
+  }
+  body {
+    display: flex;
+  }
+}
+
+/////////////////////////// CLASSES ////////////////////////////////
 
 .title-animate-left {
-  font-size: 200%;
-  color: $extra-color1;
+  animation-name: in-left;
+  animation-duration: 500ms;
 }
 
 .title-animate-right {
-  font-size: 180%;
-  color: $extra-color2;
+  animation-name: in-right;
+  animation-duration: 500ms;
+}
+
+@keyframes in-left {
+  from {
+    margin-left: -100vw;
+  }
+  to {
+    margin-left: 0px;
+  }
+}
+
+@keyframes in-right {
+  from {
+    margin-right: -100vw;
+  }
+  to {
+    margin-right: 0px;
+  }
+}
+
+////////////////////////// IDs ///////////////////////////
+#body-inner {
+  width: 100%;
 }

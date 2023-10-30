@@ -2,7 +2,8 @@
 [devshell]
 packages = [
   "nodejs",
-  "nodePackages.typescript"
+  "nodePackages.typescript",
+  "sassc"
 ]
 
 [[commands]]
