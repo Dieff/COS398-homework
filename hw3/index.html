@@ -3,16 +3,13 @@
   <head>
     <!-- Meta -->
     <meta charset="UTF-8" />
-    <meta name="author" content="Nick Dieff" />
-    <title>Nick Dieffenbacher-Krall Resume</title>
+    <meta name="author" content="Nick Dieffenbacher-Krall" />
+    <title>Nick Dieffenbacher-Krall's Resume</title>
 
     <!-- Load 1st party resources -->
     <!-- The SCSS compiler should place CSS files alongside the scss versions -->
     <link rel="stylesheet" href="./styles/styles.css" />
     <script src="./scripts/mobile-menu.js"></script>
-    <script>
-      const a = 1;
-    </script>
 
     <!-- Load 3rd party resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,19 +18,27 @@
       href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Appears to help with FOUC: https://stackoverflow.com/a/57888310 -->
+    <script>
+      const a = 1;
+    </script>
   </head>
   <body>
     <!-- Desktop version: header is a left column -->
     <!-- Laptop version: header floats next on upper right -->
     <!-- Mobile version: header floats in the middle -->
     <nav class="desktop-nav">
-      <h1>Resume Contents</h1>
-      <ul>
-        <li><a href="#top">Top</a></li>
-        <li><a href="#header-work">Work Experience</a></li>
-        <li><a href="#header-volunteer">Volunteer Experience</a></li>
-        <li><a href="#header-skills">Technical Skills</a></li>
-      </ul>
+      <!-- Need the inner div here so that the contents can move with the body. -->
+      <div class="desktop-nav-inner">
+        <h1>Resume Contents</h1>
+        <ul>
+          <li><a href="#top">Top</a></li>
+          <li><a href="#header-work">Work Experience</a></li>
+          <li><a href="#header-volunteer">Volunteer Experience</a></li>
+          <li><a href="#header-skills">Technical Skills</a></li>
+        </ul>
+      </div>
     </nav>
     <nav class="laptop-nav">
       <h1>Contents</h1>
@@ -54,8 +59,13 @@
       <!-- Animated Header -->
       <header>
         <h1 class="title-animate-left">Nick Dieffenbacher-Krall</h1>
-        <p class="title-animate-right">Contact Info</p>
-        <p class="title-animate-right">Summary</p>
+        <p class="title-animate-right">FakeEmail@gmail.com</p>
+        <p id="top-summary">
+          I am a Spring 2024 graduate from the University of Maine in Computer
+          science. I am looking for an opportunity to both apply my considerable
+          skills in web application development, site reliability engineering,
+          and cybersecurity and grow as a developer.
+        </p>
       </header>
       <main>
         <!-- Work Experience -->
@@ -181,8 +191,36 @@
           <h3 id="header-volunteer" class="indexed-header">
             Selected Volunteer / Extra-Curricular Experience
           </h3>
-          <section>University of Maine Cybersecurity Team</section>
-          <section>Academic Competitions</section>
+          <ul class="item-list">
+            <li>
+              Coached the University of Maine Cybersecurity Team for their 2021,
+              2022 and 2023 competitions.
+            </li>
+            <li>
+              Developed labs for new Cybersecurity Team Members on the topics of
+              Linux administration, web security, and computer networking.
+            </li>
+            <li>
+              Created virtual environments for cybersecurity competitions, using
+              Ansible and Terraform.
+            </li>
+            <li>
+              Elected President, University of Maine Cybersecurity Team,
+              2017-2018.
+            </li>
+            <li>
+              Elected Vice President, University of Maine Cybersecurity Team,
+              2016-2017.
+            </li>
+            <li>
+              Competed, 2017 - 2020 Northeast Collegiate Cyber Defense
+              Competition. Team captain in 2019.
+            </li>
+            <li>
+              Competed, 2016 and 2019 Collegiate Penetration Testing
+              Competition.
+            </li>
+          </ul>
         </article>
         <!-- Skills -->
         <article>
@@ -224,16 +262,16 @@
                 <h5>Python</h5>
                 <ul>
                   <li>
-                    Front end developement with JavaScript, CSS/SASS, and
-                    ReactJS.
+                    Written numerous Python libraries and scripts too automate
+                    system administration tasks.
                   </li>
                   <li>
-                    Server-side JavaScript and Typescript using NodeJS, Express,
-                    and GraphQL.
+                    Deployed Python-based services on Kubernetes, following the
+                    12-factor Cloud Native Application model.
                   </li>
                   <li>
-                    Consuming and publishing NPM libraries with Jest-based
-                    testing and CI/CD integration.
+                    Used Python for data science and statistical analysis with
+                    IPython, Jupyter, Numpy, and Pandas.
                   </li>
                 </ul>
               </div>
@@ -249,16 +287,16 @@
                 <h5>C# / .NET</h5>
                 <ul>
                   <li>
-                    Front end developement with JavaScript, CSS/SASS, and
-                    ReactJS.
+                    Created and deployed web applications using ASP.NET and
+                    Blazor.
                   </li>
                   <li>
-                    Server-side JavaScript and Typescript using NodeJS, Express,
-                    and GraphQL.
+                    Tested libraries and applications using the NUnit Framework
+                    (and bUnit for Blazor).
                   </li>
                   <li>
-                    Consuming and publishing NPM libraries with Jest-based
-                    testing and CI/CD integration.
+                    Wrote C#-based scripts for simulations in the Unity game
+                    engine.
                   </li>
                 </ul>
               </div>
@@ -274,23 +312,101 @@
                 <h5>Rust</h5>
                 <ul>
                   <li>
-                    Front end developement with JavaScript, CSS/SASS, and
-                    ReactJS.
+                    Created high-performance networked services using the Tokio
+                    framework.
                   </li>
                   <li>
-                    Server-side JavaScript and Typescript using NodeJS, Express,
-                    and GraphQL.
-                  </li>
-                  <li>
-                    Consuming and publishing NPM libraries with Jest-based
-                    testing and CI/CD integration.
+                    Contributed to several widely used open source Rust
+                    libraries used for interacting with various Linux services.
                   </li>
                 </ul>
               </div>
             </section>
           </section>
-          <section><h5>Operating Systems</h5></section>
-          <section><h5>Cloud Computing</h5></section>
+          <section>
+            <h4>Operating Systems</h4>
+            <section class="skill-block-list">
+              <section class="skill-block-root">
+                <img
+                  src="./images/Tux.svg"
+                  alt="Linux logo"
+                  class="skill-block-logo"
+                />
+                <div>
+                  <h5>Unix / Linux</h5>
+                  <ul>
+                    <li>
+                      Significant experience administering Linux-based servers
+                      running CentOS, Ubuntu, and Debian.
+                    </li>
+                    <li>Automated server configuration using Ansible.</li>
+                  </ul>
+                </div>
+              </section>
+              <section class="skill-block-root">
+                <img
+                  src="./images/windows-logo.svg"
+                  alt="Windows logo"
+                  class="skill-block-logo"
+                />
+                <div>
+                  <h5>Microsoft Windows</h5>
+                  <ul>
+                    <li>
+                      Administered Windows-based servers using Ansible and
+                      Powershell
+                    </li>
+                    <li>
+                      Deployed Windows Active Directory Domain Controllers using
+                      Server Core 2019.
+                    </li>
+                  </ul>
+                </div>
+              </section>
+            </section>
+          </section>
+          <section>
+            <h4>Cloud Computing</h4>
+            <section class="skill-block-list">
+              <section class="skill-block-root">
+                <img
+                  src="./images/k8s_logo.svg"
+                  alt="Kubernetes Logo"
+                  class="skill-block-logo"
+                />
+                <div>
+                  <h5>Kubernetes</h5>
+                  <ul>
+                    <li>
+                      Deployed numerous applications on various cloud-based
+                      Kubernetes clusters.
+                    </li>
+                    <li>
+                      Installed custom clusters on bare-metal ARM servers using
+                      K3s.
+                    </li>
+                  </ul>
+                </div>
+              </section>
+
+              <section class="skill-block-root">
+                <img
+                  src="./images/git_logo.svg"
+                  alt="Git logo"
+                  class="skill-block-logo"
+                />
+                <div>
+                  <h5>Other Skills</h5>
+                  <ul>
+                    <li>Git and Github</li>
+                    <li>Docker/Podman</li>
+                    <li>Terraform</li>
+                    <li>Cisco iOS and Routing Equipment</li>
+                  </ul>
+                </div>
+              </section>
+            </section>
+          </section>
         </article>
       </main>
       <footer>

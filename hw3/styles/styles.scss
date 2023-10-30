@@ -1,5 +1,5 @@
 ///////////////////// VARIABLES /////////////////////////////
-// color scheme from Catpuccin
+// color scheme from Catpuccin (https://github.com/catppuccin/catppuccin)
 $base-color: #1e1e2e;
 $light-base-color: #313244;
 $background: #11111b;
@@ -13,16 +13,21 @@ $link-color: #94e2d5;
 
 // fonts
 $base-font-size: 20px;
-$base-font: Raleway, sans-serif;
+$base-font: "Raleway", sans-serif; // available from Google Fonts
 $title-font: "Arial";
 $content-font-size: 16px;
 
 // sizing
-$breakpoint-laptop: 880px;
-$breakpoint-desktop: 1300px;
+$breakpoint-laptop: 50rem;
+$breakpoint-desktop: 80rem;
+$nav-width-desktop: 24rem;
+$nav-width-laptop: 10rem;
 $pgPaddingSmall: 1rem;
 $pgPaddingMedium: 3rem;
-$logo-size: 10em;
+$logo-size: 8em;
+
+// misc
+$animation-duration: 600ms;
 
 // Reusable segments
 @mixin banish-margin {
@@ -33,6 +38,11 @@ $logo-size: 10em;
 @mixin flexbox-even {
   display: flex;
   justify-content: space-around;
+}
+
+@mixin standard-border {
+  border: 0.1rem solid $border-color;
+  border-radius: 0.4rem;
 }
 
 ////////////////////////////////// TAGS ////////////////////////////////////////
@@ -50,6 +60,8 @@ header {
   h1 {
     color: $extra-color2;
     font-size: 120%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
   }
 
   p {
@@ -70,7 +82,7 @@ body {
 }
 
 main {
-  width: 90%;
+  width: 100%;
   margin: auto;
   margin-top: $pgPaddingMedium;
   background: $base-color;
@@ -82,7 +94,7 @@ footer {
   @include flexbox-even;
 
   flex-direction: column;
-  
+
   p {
     padding: 0px 1rem;
   }
@@ -105,7 +117,6 @@ h5,
 h6 {
   font-style: $title-font;
   color: $secondary-color;
-  margin: 0.8em;
 }
 
 a {
@@ -121,7 +132,8 @@ article {
   font-size: $content-font-size;
   padding: $pgPaddingSmall;
 
-  h3, h4 {
+  h3,
+  h4 {
     font-size: 130%;
   }
 
@@ -150,7 +162,7 @@ nav {
   // display gets changed back to flex by the mobile-menu.js script
   display: none;
   justify-items: center;
-  
+
   a {
     margin: auto;
   }
@@ -169,6 +181,9 @@ nav {
   header > h1 {
     font-size: 180%;
   }
+  main {
+    width: 90%;
+  }
   .mobile-nav {
     display: none;
   }
@@ -178,13 +193,13 @@ nav {
   .laptop-nav {
     display: inherit;
 
+    @include standard-border();
+
     // menu sizing
-    min-width: 10rem;
-    min-height: 10rem;
+    min-width: $nav-width-laptop;
+    min-height: $nav-width-laptop;
     padding: $pgPaddingSmall;
     margin: $pgPaddingSmall;
-    border: 0.2rem solid $border-color;
-    border-radius: 0.2rem;
 
     // menu position
     position: fixed;
@@ -215,7 +230,7 @@ nav {
   }
   .desktop-nav {
     display: inherit;
-    min-width: 15rem;
+    width: $nav-width-desktop;
 
     padding: $pgPaddingSmall;
     display: flex;
@@ -229,6 +244,10 @@ nav {
       padding: 0.8rem 0px;
     }
   }
+  .desktop-nav-inner {
+    width: $nav-width-desktop;
+    position: fixed;
+  }
   body {
     display: flex;
   }
@@ -238,12 +257,12 @@ nav {
 
 .title-animate-left {
   animation-name: in-left;
-  animation-duration: 500ms;
+  animation-duration: $animation-duration;
 }
 
 .title-animate-right {
   animation-name: in-right;
-  animation-duration: 500ms;
+  animation-duration: $animation-duration;
 }
 
 @keyframes in-left {
@@ -275,7 +294,7 @@ nav {
 }
 
 .experience-item {
-  padding-bottom: $pgPaddingMedium;
+  padding-bottom: $pgPaddingSmall;
 }
 
 .item-title {
@@ -304,17 +323,27 @@ nav {
 
 .skill-block-list {
   display: flex;
+  flex-wrap: wrap;
+  gap: $pgPaddingSmall;
+  justify-content: space-around;
 }
 
 .skill-block-root {
-  border: 0.1rem solid $border-color;
-  border-radius: 0.2rem;
+  @include standard-border();
+
+  height: 100%;
+  width: 31rem;
   display: flex;
   gap: 1rem;
 
   h5 {
+    @include banish-margin();
     font-size: 120%;
     color: $extra-color2;
+  }
+  ul {
+    @include banish-margin();
+    padding: 0.25rem 0.25rem;
   }
 }
 
@@ -326,4 +355,10 @@ nav {
 ////////////////////////// IDs ///////////////////////////
 #body-inner {
   width: 100%;
+}
+
+#top-summary {
+  font-size: 70%;
+  width: 80%;
+  margin: auto;
 }
